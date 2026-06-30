@@ -1,0 +1,11 @@
+services:
+  plc-monitor:
+    build: .
+    container_name: plc-monitor
+    restart: unless-stopped
+    network_mode: host
+    privileged: true
+    environment:
+      TZ: Europe/Brussels
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro

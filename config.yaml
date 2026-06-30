@@ -1,0 +1,34 @@
+mqtt:
+  host: "10.0.0.250"       # Mets ici l'IP de Home Assistant / Mosquitto
+  port: 1883
+  username: ""             # Optionnel
+  password: ""             # Optionnel
+  discovery_prefix: "homeassistant"
+  base_topic: "plc_monitor"
+  client_id: "plc-monitor"
+
+monitor:
+  interface: "eth0"        # Interface physique reliée au réseau CPL
+  poll_interval: 60        # secondes
+  availability_topic: "plc_monitor/status"
+
+devices:
+  - id: "living_master"
+    name: "CPL Living Master"
+    mac: ""                # Optionnel: MAC PLC si connue
+
+  - id: "u7_etage"
+    name: "CPL U7 Etage"
+    mac: ""
+
+  - id: "u7_cave"
+    name: "CPL U7 Cave / Home Assistant"
+    mac: ""
+
+  - id: "garage_huawei"
+    name: "CPL Garage Huawei Dongle"
+    mac: ""
+
+  - id: "garage_pc"
+    name: "CPL Garage PC Monitoring"
+    mac: ""
